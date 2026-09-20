@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Armania - Cafe & Pub | Rooftop Experience Jabalpur</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;800&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" type="image/jpeg" href="favicon.jpg">
+</head>
+<body>
+
+  <div id="preloader">
+    <div class="spinner"></div>
+    <p class="loader-text">ARMANIA</p>
+  </div>
+
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="#home" class="logo">Armania <span>Pub & Cafe</span></a>
+      
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#home" class="nav-link active">Home</a></li>
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#menu" class="nav-link">Menu</a></li>
+        <li><a href="#gallery" class="nav-link">Gallery</a></li>
+        <li><a href="#events" class="nav-link">Events</a></li>
+        <li><a href="#booking" class="nav-link">Book Table</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <button id="theme-toggle" aria-label="Toggle display theme">
+          <i class="fa-solid fa-moon"></i>
+        </button>
+        <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <header class="hero" id="home">
+    <div class="hero-overlay"></div>
+    <div class="hero-content reveal">
+      <p class="tagline">A Venture by Gujral Hotels Pvt Ltd</p>
+      <h1>Experience the Taste of Luxury</h1>
+      <p class="subheading">Best Food, Drinks, Music & Jabalpur's Premier FL2 Licensed Rooftop Ambience</p>
+      <div class="hero-buttons">
+        <button class="btn btn-primary" onclick="openMenuPdf()">
+          <i class="fa-solid fa-book-open"></i> View Menu
+        </button>
+        <a href="#booking" class="btn btn-outline">
+          <i class="fa-solid fa-calendar-check"></i> Book Table
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <section class="section about" id="about">
+    <div class="container">
+      <div class="section-title reveal">
+        <span class="eyebrow">Discover</span>
+        <h2>Our Culinary Story</h2>
+        <div class="gold-divider"></div>
+      </div>
+
+      <div class="about-grid">
+        <div class="about-text reveal">
+          <h3>A Taste of Elegance</h3>
+          <p>
+            Armania - Cafe & Pub is a culinary haven that caters to the refined tastes of Sansdhani of Jabalpur. Perched atop Hotel Rishi Regency, we provide a vibrant yet sophisticated escape with an expansive panoramic city view.
+          </p>
+          <p>
+            We take pride in being one of the city's select FL2-licensed rooftop venues, serving an eclectic array spanning authentic Indian curries, Asian delicacies, Italian classics, and smoky live bar-be-cue creations.
+          </p>
+          <div class="about-badge">
+            <i class="fa-solid fa-award"></i>
+            <div>
+              <strong>FL2 Licensed Venue</strong>
+              <small>Exclusive rooftop bar dining experience</small>
+            </div>
+          </div>
+        </div>
+
+        <div class="about-cards-grid reveal">
+          <div class="feature-card">
+            <i class="fa-solid fa-utensils"></i>
+            <h4>Global Flavors</h4>
+            <p>Signature Indian, Asian, Italian, & BBQ offerings prepared fresh.</p>
+          </div>
+          <div class="feature-card">
+            <i class="fa-solid fa-martini-glass-citrus"></i>
+            <h4>Curated Bar</h4>
+            <p>Specialty cocktails, mocktails, and fresh barista coffees.</p>
+          </div>
+          <div class="feature-card">
+            <i class="fa-solid fa-music"></i>
+            <h4>Soulful Music</h4>
+            <p>Acoustic sessions, high-tempo DJ nights, and lounge beats.</p>
+          </div>
+          <div class="feature-card">
+            <i class="fa-solid fa-gem"></i>
+            <h4>Rooftop Vibe</h4>
+            <p>Open-air panoramic luxury right in the heart of Jabalpur.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section menu-section" id="menu">
+    <div class="container">
+      <div class="section-title reveal">
+        <span class="eyebrow">Explore</span>
+        <h2>Our Offerings</h2>
+        <div class="gold-divider"></div>
+        <p class="section-desc">Handcrafted items from our baristas, chefs, and mixologists.</p>
+      </div>
+
+      <div class="menu-categories reveal">
+        <div class="cat-pill"><i class="fa-solid fa-cocktail"></i> Mocktails</div>
+        <div class="cat-pill"><i class="fa-solid fa-wine-glass"></i> Cocktails</div>
+        <div class="cat-pill"><i class="fa-solid fa-mug-hot"></i> Coffee</div>
+        <div class="cat-pill"><i class="fa-solid fa-bowl-food"></i> Starters</div>
+        <div class="cat-pill"><i class="fa-solid fa-plate-wheat"></i> Main Course</div>
+        <div class="cat-pill"><i class="fa-solid fa-ice-cream"></i> Desserts</div>
+      </div>
+
+      <div class="menu-cta-box reveal">
+        <i class="fa-solid fa-file-pdf pdf-icon"></i>
+        <h3>Browse the Complete Digital Menu</h3>
+        <p>Check all seasonal offerings, pricing, and beverage selections directly in our digital PDF menu.</p>
+        <button class="btn btn-primary" onclick="openMenuPdf()">
+          <i class="fa-solid fa-arrow-up-right-from-square"></i> Open Full Menu (PDF)
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <section class="section gallery" id="gallery">
+    <div class="container">
+      <div class="section-title reveal">
+        <span class="eyebrow">Visual Tour</span>
+        <h2>The Armania Ambience</h2>
+        <div class="gold-divider"></div>
+      </div>
+
+      <div class="slider-wrapper reveal">
+        <button class="slider-btn prev-btn" id="sliderPrev" aria-label="Previous slide">&#10094;</button>
+        <div class="slider-track" id="sliderTrack">
+          <div class="slide" onclick="openLightbox(this)">
+            <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80" alt="Restaurant Interior Lounge" />
+            <div class="slide-caption">Lounge Seating</div>
+          </div>
+          <div class="slide" onclick="openLightbox(this)">
+            <img src="https://images.unsplash.com/photo-1514933651103-005eec06c04b?auto=format&fit=crop&w=1200&q=80" alt="Bar Counter & Cocktails" />
+            <div class="slide-caption">The Cocktails Bar</div>
+          </div>
+          <div class="slide" onclick="openLightbox(this)">
+            <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=1200&q=80" alt="Artisan Food Dish" />
+            <div class="slide-caption">Gourmet Creations</div>
+          </div>
+          <div class="slide" onclick="openLightbox(this)">
+            <img src="https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?auto=format&fit=crop&w=1200&q=80" alt="Artisan Coffee & Latte Art" />
+            <div class="slide-caption">Barista Brews</div>
+          </div>
+        </div>
+        <button class="slider-btn next-btn" id="sliderNext" aria-label="Next slide">&#10095;</button>
+      </div>
+
+      <div class="slider-dots" id="sliderDots"></div>
+    </div>
+  </section>
+
+  <div class="lightbox" id="lightbox">
+    <span class="lightbox-close" onclick="closeLightbox()">&times;</span>
+    <img class="lightbox-content" id="lightboxImg" alt="Enlarged view" />
+    <div class="lightbox-caption" id="lightboxCaption"></div>
+  </div>
+
+  <section class="section events" id="events">
+    <div class="container">
+      <div class="section-title reveal">
+        <span class="eyebrow">What's Happening</span>
+        <h2>Events & Offers</h2>
+        <div class="gold-divider"></div>
+      </div>
+
+      <div class="events-grid">
+        <div class="event-card reveal">
+          <div class="event-img-wrap">
+            <img src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&w=800&q=80" alt="Live Music Nights" />
+            <span class="event-badge">Weekends</span>
+          </div>
+          <div class="event-body">
+            <h3>Acoustic & Live Music</h3>
+            <p>Unwind under the open sky with acoustic sets and soulful jazz performances every Friday and Saturday evening.</p>
+          </div>
+        </div>
+
+        <div class="event-card reveal">
+          <div class="event-img-wrap">
+            <img src="https://images.unsplash.com/photo-1470225620780-dba8ba36b745?auto=format&fit=crop&w=800&q=80" alt="Club DJ Night" />
+            <span class="event-badge">Sundays</span>
+          </div>
+          <div class="event-body">
+            <h3>Weekend DJ Nights</h3>
+            <p>Turn up the tempo with resident and guest DJs playing commercial, techno, and club anthems into the night.</p>
+          </div>
+        </div>
+
+        <div class="event-card highlight-card reveal">
+          <div class="loyalty-icon-wrap">
+            <i class="fa-solid fa-crown"></i>
+          </div>
+          <div class="event-body">
+            <span class="event-badge-offer">Exclusive Loyalty</span>
+            <h3>Tier Based Rewards</h3>
+            <p>Earn reward points with every visit! Starting at <strong>8%</strong> all the way up to <strong>20%</strong> points back on bills. The longer you stay with us, the more we reward your palate.</p>
+            <small class="loyalty-sub">*Redeemable against your upcoming bills</small>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section booking" id="booking">
+    <div class="container">
+      <div class="booking-wrapper reveal">
+        <div class="section-title">
+          <span class="eyebrow">Reservations</span>
+          <h2>Book a Table</h2>
+          <div class="gold-divider"></div>
+          <p class="section-desc">Reserve your spot on Jabalpur's premier rooftop ahead of time.</p>
+        </div>
+
+        <form id="bookingForm" class="booking-form" novalidate onsubmit="handleWhatsAppBooking(event)">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="guestName"><i class="fa-solid fa-user"></i> Full Name *</label>
+              <input type="text" id="guestName" placeholder="e.g. Gurdeep Wadhwa" required />
+              <small class="error-msg" id="nameError"></small>
+            </div>
+
+            <div class="form-group">
+              <label for="guestPhone"><i class="fa-solid fa-phone"></i> Mobile Number *</label>
+              <input type="tel" id="guestPhone" placeholder="10-digit mobile number" maxlength="14" required />
+              <small class="error-msg" id="phoneError"></small>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="guestCount"><i class="fa-solid fa-users"></i> Number of Guests *</label>
+              <select id="guestCount" required>
+                <option value="" disabled selected>Select party size</option>
+                <option value="1 Guest">1 Guest</option>
+                <option value="2 Guests">2 Guests</option>
+                <option value="3 - 4 Guests">3 - 4 Guests</option>
+                <option value="5 - 8 Guests">5 - 8 Guests</option>
+                <option value="9+ Guests (Party/Lounge)">9+ Guests (Party / Lounge)</option>
+              </select>
+              <small class="error-msg" id="guestsError"></small>
+            </div>
+
+            <div class="form-group">
+              <label for="bookingDate"><i class="fa-solid fa-calendar"></i> Date *</label>
+              <input type="date" id="bookingDate" required />
+              <small class="error-msg" id="dateError"></small>
+            </div>
+
+            <div class="form-group">
+              <label for="bookingTime"><i class="fa-solid fa-clock"></i> Time *</label>
+              <input type="time" id="bookingTime" required />
+              <small class="error-msg" id="timeError"></small>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="specialRequest"><i class="fa-solid fa-note-sticky"></i> Special Request (Optional)</label>
+            <textarea id="specialRequest" rows="3" placeholder="Rooftop corner table, birthday arrangement, candle light setup, etc."></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-primary submit-btn" id="bookTableBtn">
+            <i class="fa-brands fa-whatsapp"></i> Book Table via WhatsApp
+          </button>
+
+          <div id="bookingAlert" class="booking-alert" role="alert"></div>
+        </form>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="section contact" id="contact">
+    <div class="container">
+      <div class="section-title reveal">
+        <span class="eyebrow">Connect</span>
+        <h2>Contact & Timings</h2>
+        <div class="gold-divider"></div>
+      </div>
+
+      <div class="contact-grid">
+        <div class="contact-card reveal">
+          <div class="info-item">
+            <i class="fa-solid fa-location-dot"></i>
+            <div>
+              <h4>Address</h4>
+              <p>Rooftop, Hotel Rishi Regency, Opp. SBI, Civil Lines, Jabalpur, MP, India - 482001</p>
+            </div>
+          </div>
+
+          <div class="info-item">
+            <i class="fa-solid fa-clock"></i>
+            <div>
+              <h4>Operating Hours</h4>
+              <p>Monday – Sunday: 12:00 PM (Noon) – 11:30 PM</p>
+            </div>
+          </div>
+
+          <div class="info-item">
+            <i class="fa-solid fa-phone"></i>
+            <div>
+              <h4>Phone</h4>
+              <p><a href="tel:+919190099999">+91 9190099999</a></p>
+            </div>
+          </div>
+
+          <div class="info-item">
+            <i class="fa-solid fa-envelope"></i>
+            <div>
+              <h4>Email</h4>
+              <p><a href="mailto:armaniajbp@gmail.com">armaniajbp@gmail.com</a></p>
+              <p><a href="mailto:armania@gujralhotels.com">armania@gujralhotels.com</a></p>
+            </div>
+          </div>
+
+          <div class="info-item">
+            <i class="fa-solid fa-hotel"></i>
+            <div>
+              <h4>Room Bookings</h4>
+              <p><a href="http://www.hotelrishiregency.com" target="_blank" rel="noopener">www.hotelrishiregency.com</a></p>
+            </div>
+          </div>
+        </div>
+
+        <div class="map-wrap reveal">
+          <iframe 
+            title="Google Maps Location of Hotel Rishi Regency, Jabalpur"
+            src="https://maps.google.com/maps?q=Hotel%20Rishi%20Regency%20Civil%20Lines%20Jabalpur&t=&z=15&ie=UTF8&iwloc=&output=embed" 
+            loading="lazy">
+          </iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container footer-content">
+      <div class="footer-col">
+        <h3>Armania</h3>
+        <p>A venture by Gujral Hotels Private Limited.<br>Your favorite rooftop experience.</p>
+        <div class="legal-tags">
+          <small>GSTN: 23AAACG8410BIZC</small><br>
+          <small>CIN: U55101MP1991PTC006272</small>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4>Direct Navigation</h4>
+        <ul class="footer-links">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#menu" onclick="openMenuPdf()">Digital Menu</a></li>
+          <li><a href="#gallery">Gallery</a></li>
+          <li><a href="#booking">Book Table</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Follow Us</h4>
+        <p>Stay tuned with our nightlife events & updates:</p>
+        <div class="social-icons">
+          <a href="https://instagram.com/Armania.jbp" target="_blank" rel="noopener" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="https://facebook.com" target="_blank" rel="noopener" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="https://whatsapp.com" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+        </div>
+      </div>
+    </div>
+    
+    <div class="footer-bottom">
+      <p>&copy; 2026 Armania - Cafe & Pub. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <button id="backToTopBtn" aria-label="Back to top">
+    <i class="fa-solid fa-chevron-up"></i>
+  </button>
+
+  <script src="script.js"></script>
+</body>
+</html>
