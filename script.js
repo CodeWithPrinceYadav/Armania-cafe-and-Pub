@@ -321,3 +321,6 @@ const scrollObserver = new IntersectionObserver((entries, observer) => {
 }, observerOptions);
 
 revealElements.forEach((el) => scrollObserver.observe(el));
+function openMenuPdf(pdfPath) {
+  window.open(pdfPath, '_blank');
+}

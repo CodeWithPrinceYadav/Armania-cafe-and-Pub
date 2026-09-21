@@ -1176,4 +1176,7 @@ img {
   to { opacity: 1; transform: translateY(0); }
 }
 
-/* logo */
+#menu-card{
+  display: flex;
+  gap: 10px;
+}

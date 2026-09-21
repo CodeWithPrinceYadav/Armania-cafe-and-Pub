@@ -136,14 +136,27 @@
         <div class="cat-pill"><i class="fa-solid fa-ice-cream"></i> Desserts</div>
       </div>
 
-      <div class="menu-cta-box reveal">
+      <div id="menu-card">
+        <div class="menu-cta-box reveal">
         <i class="fa-solid fa-file-pdf pdf-icon"></i>
-        <h3>Browse the Complete Digital Menu</h3>
+        <h3>Browse the Complete Food Menu</h3>
         <p>Check all seasonal offerings, pricing, and beverage selections directly in our digital PDF menu.</p>
-        <button class="btn btn-primary" onclick="openMenuPdf()">
-          <i class="fa-solid fa-arrow-up-right-from-square"></i> Open Full Menu (PDF)
+        <button class="btn btn-primary" onclick="openMenuPdf('menu.pdf')">
+          <i class="fa-solid fa-arrow-up-right-from-square"></i> Open Food Menu (PDF)
         </button>
       </div>
+<br>
+      <div class="menu-cta-box reveal">
+        <i class="fa-solid fa-file-pdf pdf-icon"></i>
+        <h3>Browse the Drink Menu</h3>
+        <p>Explore our full bar menu featuring local craft brews, signature spirits, and daily drink specials.</p>
+        <!-- Drink Menu Button (Line 153) -->
+        <button class="btn btn-primary" onclick="openMenuPdf('Liquor Menu-7.pdf')">
+        <i class="fa-solid fa-arrow-up-right-from-square"></i> Open Drink Menu (PDF)
+      </button> 
+      </div>
+      </div>
+
     </div>
   </section>
 
