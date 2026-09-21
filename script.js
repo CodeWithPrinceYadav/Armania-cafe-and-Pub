@@ -2,7 +2,7 @@
  * Armania Pub & Cafe - Official Interaction Script
  */
 
-// 1. Digital Menu PDF Opener
+// 1. Digital Menu PDF Opener (FIXED: Added function)
 function openMenuPdf() {
   window.open('menu.pdf', '_blank');
 }
@@ -50,56 +50,68 @@ window.addEventListener('scroll', () => {
 
   // Back To Top Button trigger
   const backToTopBtn = document.getElementById('backToTopBtn');
-  if (window.scrollY > 400) {
-    backToTopBtn.classList.add('show');
-  } else {
-    backToTopBtn.classList.remove('show');
+  if (backToTopBtn) {
+    if (window.scrollY > 400) {
+      backToTopBtn.classList.add('show');
+    } else {
+      backToTopBtn.classList.remove('show');
+    }
   }
 });
 
 // Back To Top Click
-document.getElementById('backToTopBtn').addEventListener('click', () => {
-  window.scrollTo({ top: 0, behavior: 'smooth' });
-});
+const backToTopBtn = document.getElementById('backToTopBtn');
+if (backToTopBtn) {
+  backToTopBtn.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+}
 
 // 4. Mobile Menu Drawer Navigation
 const hamburger = document.getElementById('hamburger');
 const navMenu = document.getElementById('nav-links');
 
-hamburger.addEventListener('click', () => {
-  navMenu.classList.toggle('open');
-  const icon = hamburger.querySelector('i');
-  icon.classList.toggle('fa-bars');
-  icon.classList.toggle('fa-xmark');
-});
-
-navLinks.forEach((link) => {
-  link.addEventListener('click', () => {
-    navMenu.classList.remove('open');
+if (hamburger && navMenu) {
+  hamburger.addEventListener('click', () => {
+    navMenu.classList.toggle('open');
     const icon = hamburger.querySelector('i');
-    icon.classList.add('fa-bars');
-    icon.classList.remove('fa-xmark');
+    if (icon) {
+      icon.classList.toggle('fa-bars');
+      icon.classList.toggle('fa-xmark');
+    }
   });
-});
+
+  navLinks.forEach((link) => {
+    link.addEventListener('click', () => {
+      navMenu.classList.remove('open');
+      const icon = hamburger.querySelector('i');
+      if (icon) {
+        icon.classList.add('fa-bars');
+        icon.classList.remove('fa-xmark');
+      }
+    });
+  });
+}
 
 // 5. Light / Dark Mode Toggle
 const themeToggle = document.getElementById('theme-toggle');
-const themeIcon = themeToggle.querySelector('i');
 
-// Load stored theme or default to dark
-const savedTheme = localStorage.getItem('armania-theme') || 'dark';
-document.documentElement.setAttribute('data-theme', savedTheme);
-updateThemeIcon(savedTheme);
+if (themeToggle) {
+  const themeIcon = themeToggle.querySelector('i');
+  const savedTheme = localStorage.getItem('armania-theme') || 'dark';
+  document.documentElement.setAttribute('data-theme', savedTheme);
+  if (themeIcon) updateThemeIcon(themeIcon, savedTheme);
 
-themeToggle.addEventListener('click', () => {
-  const currentTheme = document.documentElement.getAttribute('data-theme');
-  const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-  document.documentElement.setAttribute('data-theme', newTheme);
-  localStorage.setItem('armania-theme', newTheme);
-  updateThemeIcon(newTheme);
-});
+  themeToggle.addEventListener('click', () => {
+    const currentTheme = document.documentElement.getAttribute('data-theme');
+    const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+    document.documentElement.setAttribute('data-theme', newTheme);
+    localStorage.setItem('armania-theme', newTheme);
+    if (themeIcon) updateThemeIcon(themeIcon, newTheme);
+  });
+}
 
-function updateThemeIcon(theme) {
+function updateThemeIcon(themeIcon, theme) {
   if (theme === 'light') {
     themeIcon.classList.remove('fa-moon');
     themeIcon.classList.add('fa-sun');
@@ -119,19 +131,20 @@ const dotsContainer = document.getElementById('sliderDots');
 let currentSlide = 0;
 const totalSlides = slides.length;
 
-// Create navigation dots dynamically
-slides.forEach((_, idx) => {
-  const dot = document.createElement('div');
-  dot.classList.add('dot');
-  if (idx === 0) dot.classList.add('active');
-  dot.addEventListener('click', () => goToSlide(idx));
-  dotsContainer.appendChild(dot);
-});
-
-const dots = document.querySelectorAll('.dot');
+if (dotsContainer && totalSlides > 0) {
+  slides.forEach((_, idx) => {
+    const dot = document.createElement('div');
+    dot.classList.add('dot');
+    if (idx === 0) dot.classList.add('active');
+    dot.addEventListener('click', () => goToSlide(idx));
+    dotsContainer.appendChild(dot);
+  });
+}
 
 function updateSlider() {
+  if (!sliderTrack) return;
   sliderTrack.style.transform = `translateX(-${currentSlide * 100}%)`;
+  const dots = document.querySelectorAll('.dot');
   dots.forEach((dot, idx) => {
     dot.classList.toggle('active', idx === currentSlide);
   });
@@ -152,14 +165,15 @@ function goToSlide(index) {
   updateSlider();
 }
 
-nextBtn.addEventListener('click', nextSlide);
-prevBtn.addEventListener('click', prevSlide);
+if (nextBtn) nextBtn.addEventListener('click', nextSlide);
+if (prevBtn) prevBtn.addEventListener('click', prevSlide);
 
-// Auto-advance slider every 6 seconds
 let slideInterval = setInterval(nextSlide, 6000);
 const sliderWrapper = document.querySelector('.slider-wrapper');
-sliderWrapper.addEventListener('mouseenter', () => clearInterval(slideInterval));
-sliderWrapper.addEventListener('mouseleave', () => (slideInterval = setInterval(nextSlide, 6000)));
+if (sliderWrapper) {
+  sliderWrapper.addEventListener('mouseenter', () => clearInterval(slideInterval));
+  sliderWrapper.addEventListener('mouseleave', () => (slideInterval = setInterval(nextSlide, 6000)));
+}
 
 // Lightbox logic
 const lightbox = document.getElementById('lightbox');
@@ -167,6 +181,7 @@ const lightboxImg = document.getElementById('lightboxImg');
 const lightboxCaption = document.getElementById('lightboxCaption');
 
 function openLightbox(slideElement) {
+  if (!lightbox || !lightboxImg) return;
   const img = slideElement.querySelector('img');
   const caption = slideElement.querySelector('.slide-caption');
   lightboxImg.src = img.src;
@@ -175,23 +190,20 @@ function openLightbox(slideElement) {
 }
 
 function closeLightbox() {
-  lightbox.style.display = 'none';
+  if (lightbox) lightbox.style.display = 'none';
 }
 
-lightbox.addEventListener('click', (e) => {
-  if (e.target !== lightboxImg) {
-    closeLightbox();
-  }
-});
+if (lightbox) {
+  lightbox.addEventListener('click', (e) => {
+    if (e.target !== lightboxImg) {
+      closeLightbox();
+    }
+  });
+}
 
-// ==========================================
-// // 7. WHATSAPP RESERVATION SYSTEM
-// ==========================================
-
-// Cafe ka WhatsApp number (bina '+' ya spaces ke)
+// 7. WhatsApp Reservation System
 const CAFE_WHATSAPP_NUMBER = "9827276528"; 
 
-// Past dates ko disable karne ke liye
 document.addEventListener("DOMContentLoaded", () => {
   const dateInput = document.getElementById("bookingDate");
   if (dateInput) {
@@ -222,31 +234,26 @@ function handleWhatsAppBooking(event) {
 
   let isValid = true;
 
-  // 1. Name Check
   if (name.length < 2) {
     showError(nameInput, "nameError", "Please enter your full name.");
     isValid = false;
   }
 
-  // 2. Phone Check
   if (rawPhone.length < 10) {
     showError(phoneInput, "phoneError", "Enter a valid 10-digit mobile number.");
     isValid = false;
   }
 
-  // 3. Guests Check
   if (!guests) {
     showError(guestsInput, "guestsError", "Please select party size.");
     isValid = false;
   }
 
-  // 4. Date Check
   if (!date) {
     showError(dateInput, "dateError", "Please pick a reservation date.");
     isValid = false;
   }
 
-  // 5. Time Check
   if (!time) {
     showError(timeInput, "timeError", "Please choose reservation timing.");
     isValid = false;
@@ -254,11 +261,9 @@ function handleWhatsAppBooking(event) {
 
   if (!isValid) return;
 
-  // Date format: DD/MM/YYYY
   const [year, month, day] = date.split("-");
   const formattedDate = `${day}/${month}/${year}`;
 
-  // WhatsApp Message
   const message = 
 `🍽️ New Table Reservation – Armania Pub & Café
 👤 Name: ${name}
@@ -270,25 +275,24 @@ function handleWhatsAppBooking(event) {
 
 Please confirm the reservation with the customer.`;
 
-  // Open WhatsApp
   const encodedMessage = encodeURIComponent(message);
   const whatsappUrl = `https://wa.me/${CAFE_WHATSAPP_NUMBER}?text=${encodedMessage}`;
 
   window.open(whatsappUrl, "_blank");
 
-  // Show Success Message
-  alertBox.className = "booking-alert success";
-  alertBox.innerHTML = `<i class="fa-solid fa-circle-check"></i> Redirecting to WhatsApp! Send the message to complete booking.`;
-  alertBox.style.display = "flex";
+  if (alertBox) {
+    alertBox.className = "booking-alert success";
+    alertBox.innerHTML = `<i class="fa-solid fa-circle-check"></i> Redirecting to WhatsApp! Send the message to complete booking.`;
+    alertBox.style.display = "flex";
 
-  document.getElementById("bookingForm").reset();
+    document.getElementById("bookingForm").reset();
 
-  setTimeout(() => {
-    alertBox.style.display = "none";
-  }, 7000);
+    setTimeout(() => {
+      alertBox.style.display = "none";
+    }, 7000);
+  }
 }
 
-// Error Helpers
 function showError(inputElement, errorElementId, message) {
   inputElement.classList.add("invalid");
   const errorElement = document.getElementById(errorElementId);
@@ -300,7 +304,7 @@ function clearErrors() {
   document.querySelectorAll(".error-msg").forEach((el) => (el.textContent = ""));
 }
 
-// 8. Intersection Observer for Smooth Scroll Reveal
+// 8. Intersection Observer for Scroll Reveal
 const revealElements = document.querySelectorAll('.reveal');
 const observerOptions = {
   threshold: 0.15,
