@@ -1255,3 +1255,72 @@ img {
     background: transparent !important;
   }
 }
+/* ==========================================================================
+   Global Mobile Side Spacing (Padding) Fix
+   ========================================================================== */
+
+/* 1. Base Container Side Padding */
+.container,
+section,
+.section,
+.about,
+.events,
+.loyalty,
+.reservations,
+.gallery,
+.booking-section {
+  padding-left: 20px !important;
+  padding-right: 20px !important;
+  box-sizing: border-box !important;
+}
+
+/* 2. Specific Section Cards Inner Padding Adjustment */
+@media (max-width: 768px) {
+  /* Ambience Gallery / Slider Adjustments */
+  .gallery-slider,
+  .slider-container,
+  .ambience-slider {
+    width: 100% !important;
+    border-radius: 12px !important;
+    overflow: hidden !important;
+  }
+
+  /* Events Cards & Images Padding */
+  .event-card,
+  .events-grid,
+  .events-card {
+    width: 100% !important;
+    margin: 0 auto 20px auto !important;
+    border-radius: 12px !important;
+    overflow: hidden !important;
+  }
+
+  /* Loyalty Card Side Gap */
+  .loyalty-card,
+  .tier-card,
+  .exclusive-loyalty {
+    width: 100% !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Booking Form Container Gap */
+  .booking-form,
+  .reservation-form,
+  form {
+    width: 100% !important;
+    padding-left: 10px !important;
+    padding-right: 10px !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Ensure inputs don't touch form borders */
+  .form-group,
+  input,
+  select,
+  textarea {
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+}
