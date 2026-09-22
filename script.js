@@ -202,7 +202,7 @@ if (lightbox) {
 }
 
 // 7. WhatsApp Reservation System
-const CAFE_WHATSAPP_NUMBER = "9827276528"; 
+const CAFE_WHATSAPP_NUMBER = "9190099999"; 
 
 document.addEventListener("DOMContentLoaded", () => {
   const dateInput = document.getElementById("bookingDate");
